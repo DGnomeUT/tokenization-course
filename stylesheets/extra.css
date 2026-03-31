@@ -1,0 +1,119 @@
+/* ============================================================
+   Executive Refresher Section
+   ============================================================ */
+
+.refresher-wrapper {
+  background: rgba(255, 160, 0, 0.07);
+  border: 1px solid var(--md-accent-fg-color);
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+}
+
+.refresher-wrapper h2 {
+  color: var(--md-accent-fg-color);
+  margin-top: 0;
+}
+
+/* ============================================================
+   Knowledge Check Quiz Section
+   ============================================================ */
+
+.quiz-wrapper {
+  background: var(--md-code-bg-color);
+  border: 2px solid var(--md-primary-fg-color);
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+}
+
+.quiz-wrapper h2 {
+  color: var(--md-primary-fg-color);
+  margin-top: 0;
+}
+
+/* Question stem */
+.quiz-question {
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0.75rem 1rem;
+  background: rgba(63, 81, 181, 0.1);
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+}
+
+/* Option rows */
+.quiz-option {
+  cursor: pointer;
+  padding: 0.55rem 1rem;
+  margin: 0.3rem 0 !important;
+  border-radius: 6px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  user-select: none;
+}
+
+.quiz-option:hover {
+  background: rgba(63, 81, 181, 0.15);
+  border-color: var(--md-primary-fg-color);
+  transform: translateX(5px);
+}
+
+/* Selected (neutral) */
+.quiz-option.quiz-selected {
+  background: rgba(63, 81, 181, 0.15);
+  border-color: var(--md-primary-fg-color);
+}
+
+/* Correct answer */
+.quiz-option.quiz-correct {
+  background: rgba(30, 130, 76, 0.25) !important;
+  border-color: #4caf50 !important;
+  color: #4caf50 !important;
+  font-weight: 600;
+  transform: none;
+}
+
+/* Wrong answer chosen */
+.quiz-option.quiz-incorrect {
+  background: rgba(183, 28, 28, 0.25) !important;
+  border-color: #ef5350 !important;
+  color: #ef5350 !important;
+  transform: none;
+}
+
+/* Correct answer revealed after a wrong pick */
+.quiz-option.quiz-reveal {
+  background: rgba(30, 130, 76, 0.12) !important;
+  border: 2px dashed #4caf50 !important;
+  color: #4caf50 !important;
+}
+
+/* ── Answer Key ── */
+
+.quiz-answer-key {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+
+.quiz-toggle-btn {
+  display: inline-block;
+  margin: 1.25rem 0 0.5rem;
+  padding: 0.55rem 1.4rem;
+  background: var(--md-primary-fg-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.quiz-toggle-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}

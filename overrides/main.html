@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% block styles %}
+{{ super() }}
+<style>
+/* ── Executive Refresher ── */
+.refresher-wrapper {
+  background: #1a1200;
+  border: 2px solid #f9a825;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+.refresher-wrapper h2 {
+  color: #f9a825 !important;
+  margin-top: 0 !important;
+  border-bottom: 1px solid #f9a825;
+  padding-bottom: 0.5rem;
+}
+.refresher-wrapper p,
+.refresher-wrapper li {
+  color: #fff8e1 !important;
+}
+
+/* ── Quiz Wrapper ── */
+.quiz-wrapper {
+  background: #0d1230;
+  border: 2px solid #5c6bc0;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+.quiz-wrapper h2 {
+  color: #9fa8da !important;
+  margin-top: 0 !important;
+  border-bottom: 1px solid #5c6bc0;
+  padding-bottom: 0.5rem;
+}
+.quiz-wrapper h3 {
+  color: #c5cae9 !important;
+}
+
+/* ── Question stem ── */
+.quiz-question {
+  background: #1a2060 !important;
+  border-left: 4px solid #5c6bc0 !important;
+  border-radius: 6px !important;
+  padding: 0.75rem 1rem !important;
+  margin: 2rem 0 0.6rem 0 !important;
+  color: #e8eaf6 !important;
+}
+
+/* ── Answer options ── */
+.quiz-option {
+  cursor: pointer !important;
+  background: #161c40 !important;
+  border: 1px solid #3d4470 !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 1rem !important;
+  margin: 0.35rem 0 !important;
+  color: #c5cae9 !important;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s !important;
+  user-select: none !important;
+}
+.quiz-option:hover {
+  background: #1e2660 !important;
+  border-color: #7986cb !important;
+  transform: translateX(5px) !important;
+}
+.quiz-option.quiz-correct {
+  background: #1b4d1b !important;
+  border-color: #4caf50 !important;
+  color: #a5d6a7 !important;
+  font-weight: 600 !important;
+  transform: none !important;
+}
+.quiz-option.quiz-incorrect {
+  background: #4d0000 !important;
+  border-color: #ef5350 !important;
+  color: #ffcdd2 !important;
+  transform: none !important;
+}
+.quiz-option.quiz-reveal {
+  background: #0d2e0d !important;
+  border: 2px dashed #4caf50 !important;
+  color: #a5d6a7 !important;
+}
+
+/* ── Answer key ── */
+.quiz-answer-key {
+  background: #080e25;
+  border: 1px solid #3d4470;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+}
+.quiz-answer-key p,
+.quiz-answer-key li {
+  color: #b0bec5 !important;
+}
+
+/* ── Toggle button ── */
+.quiz-toggle-btn {
+  background: #5c6bc0;
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.quiz-toggle-btn:hover {
+  background: #7986cb;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+(function() {
+  console.log('[quiz] script inline v3');
+
+  function run() {
+    console.log('[quiz] run() called, readyState=' + document.readyState);
+    styleRefresher();
+    initQuiz();
+  }
+
+  function styleRefresher() {
+    var h2 = document.getElementById('executive-refresher');
+    if (!h2) return;
+    var wrapper = document.createElement('div');
+    wrapper.className = 'refresher-wrapper';
+    h2.parentNode.insertBefore(wrapper, h2);
+    wrapper.appendChild(h2);
+    var next = wrapper.nextElementSibling;
+    while (next) {
+      var cur = next;
+      next = next.nextElementSibling;
+      if (cur.tagName === 'H2') break;
+      if (cur.tagName === 'HR') { wrapper.appendChild(cur); break; }
+      wrapper.appendChild(cur);
+    }
+  }
+
+  function initQuiz() {
+    var h2 = document.getElementById('knowledge-check-quiz');
+    if (!h2) { console.log('[quiz] no quiz found on this page'); return; }
+    console.log('[quiz] initialising quiz');
+
+    var elements = [];
+    var el = h2.nextElementSibling;
+    while (el && el.tagName !== 'H2') {
+      elements.push(el);
+      el = el.nextElementSibling;
+    }
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'quiz-wrapper';
+    h2.parentNode.insertBefore(wrapper, h2);
+    wrapper.appendChild(h2);
+    elements.forEach(function(e) { wrapper.appendChild(e); });
+
+    // Parse answers
+    var answers = {};
+    var answerH3 = wrapper.querySelector('h3[id*="answer-key"]');
+    if (answerH3) {
+      var scan = answerH3.nextElementSibling;
+      while (scan) {
+        var m = scan.textContent.match(/^\s*(\d+)\.\s*Answer:\s*([A-D])/i);
+        if (m) answers[m[1]] = m[2].toUpperCase();
+        scan = scan.nextElementSibling;
+      }
+      console.log('[quiz] answers:', JSON.stringify(answers));
+
+      // Collect and collapse answer key
+      var akEls = [];
+      scan = answerH3.nextElementSibling;
+      while (scan) { akEls.push(scan); scan = scan.nextElementSibling; }
+
+      var akWrapper = document.createElement('div');
+      akWrapper.className = 'quiz-answer-key';
+      akWrapper.style.display = 'none';
+      answerH3.after(akWrapper);
+      akEls.forEach(function(e) { akWrapper.appendChild(e); });
+
+      var btn = document.createElement('button');
+      btn.className = 'quiz-toggle-btn';
+      btn.textContent = 'Show Answer Key';
+      answerH3.before(btn);
+      btn.addEventListener('click', function() {
+        var hidden = akWrapper.style.display === 'none';
+        akWrapper.style.display = hidden ? 'block' : 'none';
+        btn.textContent = hidden ? 'Hide Answer Key' : 'Show Answer Key';
+      });
+    }
+
+    // Make options clickable
+    var qNum = 0;
+    wrapper.querySelectorAll('p').forEach(function(p) {
+      var text = p.textContent.trim();
+      var strong = p.querySelector('strong');
+      if (strong && /^\d+\./.test(strong.textContent.trim())) {
+        qNum++;
+        p.classList.add('quiz-question');
+        p.setAttribute('data-question', String(qNum));
+        return;
+      }
+      if (/^[A-D]\)/.test(text) && qNum > 0) {
+        p.classList.add('quiz-option');
+        p.setAttribute('data-question', String(qNum));
+        p.setAttribute('data-option', text[0].toUpperCase());
+        p.addEventListener('click', function() {
+          var q = this.getAttribute('data-question');
+          var chosen = this.getAttribute('data-option');
+          var correct = answers[q];
+          wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
+            o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
+          });
+          this.classList.add('quiz-selected');
+          if (chosen === correct) {
+            this.classList.add('quiz-correct');
+          } else {
+            this.classList.add('quiz-incorrect');
+            var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
+            if (cEl) cEl.classList.add('quiz-reveal');
+          }
+        });
+      }
+    });
+    console.log('[quiz] done, ' + qNum + ' questions');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+{% endblock %}

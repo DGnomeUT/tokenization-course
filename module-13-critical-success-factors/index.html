@@ -888,6 +888,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Knowledge Check Quiz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#answer-key-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer Key &amp; Explanations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1085,6 +1102,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Knowledge Check Quiz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#answer-key-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer Key &amp; Explanations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1149,7 +1183,88 @@ To overcome institutional inertia and identify integration hurdles, start small.
 Building an end-to-end tokenization platform from scratch is rarely feasible or efficient. Executives must clarify their institution's specific role in the value chain and partner with established digital-native service providers, custodians, and legal experts to acquire the necessary infrastructure and navigate the complexities of the tokenized economy.</p>
 <hr />
 <h2 id="knowledge-check-quiz">Knowledge Check Quiz</h2>
-<p><em>[Quiz generation failed: Chat request timed out: ]</em></p>
+<p><strong>Question 1: MiCA Penalties and Regulatory Non-Compliance</strong>
+An EU-based institution issues an Asset-Referenced Token (ART) without obtaining proper MiCA authorization. During an enforcement audit, the regulator finds the institution has been operating without required reserve documentation for 6 months. Under MiCA's penalty framework, what is the maximum administrative sanction the regulator can impose?</p>
+<p>A) A warning letter with a 30-day remediation period and no financial penalty, since MiCA's enforcement framework prioritizes corrective guidance over punitive sanctions.</p>
+<p>B) Administrative fines of up to €5 million or 12.5% of annual turnover (whichever is higher), public disclosure of the violation on the regulator's official website, and a temporary or permanent ban on executives involved in the non-compliant activity.</p>
+<p>C) Criminal prosecution under EU financial crime law with mandatory minimum prison sentences of 5 years for senior executives.</p>
+<p>D) Automatic liquidation of the token issuance program with all token proceeds returned to investors at face value within 48 hours.</p>
+<p><strong>Question 2: Smart Contract Audit Standards for Institutional Deployment</strong>
+Your institution is preparing to deploy a smart contract that will govern $500 million in tokenized bond issuance. The CTO proposes using an internal team to review the code before deployment to save costs. What is the minimum industry standard audit process for smart contracts managing institutional-scale assets?</p>
+<p>A) Internal code review by the development team is sufficient since the team has the deepest familiarity with the contract architecture.</p>
+<p>B) Multiple independent third-party security audits by specialist firms (such as Trail of Bits, OpenZeppelin, or Certik), followed by formal verification of critical contract functions using mathematical proofs — with all audit reports published publicly to allow ongoing community review and bug disclosure.</p>
+<p>C) A single automated code scan using open-source static analysis tools (like Slither or Mythril) is sufficient if no critical vulnerabilities are flagged.</p>
+<p>D) Smart contract auditing is only required for DeFi protocols; institutional permissioned tokenization contracts operate under different legal frameworks that make code audits unnecessary.</p>
+<p><strong>Question 3: Cross-Chain Interoperability: Burn-and-Mint Mechanics</strong>
+Your tokenized fund is deployed on Ethereum and you want to make it accessible to investors on Polygon without creating a duplicate token supply. A developer proposes a 'Burn and Mint' cross-chain mechanism. How does this mechanism maintain supply integrity?</p>
+<p>A) Tokens are burned on Ethereum and permanently destroyed; new tokens are created on Polygon with no link to the original Ethereum supply, effectively doubling the total token supply.</p>
+<p>B) When tokens move from Ethereum to Polygon, they are permanently burned (destroyed) on Ethereum, reducing the Ethereum supply; simultaneously, an equivalent number of new tokens are minted on Polygon — ensuring the total circulating supply across all chains remains constant at all times.</p>
+<p>C) The Burn and Mint mechanism creates a synthetic derivative on Polygon that mimics the Ethereum token's returns without any actual asset backing on the destination chain.</p>
+<p>D) Burn and Mint requires the token issuer to manually authorize each cross-chain transfer by signing a transaction on both chains within a 60-second window.</p>
+<p><strong>Question 4: Investor Education and UX Design for Non-Crypto-Native Investors</strong>
+A wealth management firm wants to offer tokenized alternative investments to high-net-worth clients who are sophisticated investors but have no prior experience with blockchain or digital wallets. What UX design principle is most important for achieving adoption?</p>
+<p>A) Exposing the full technical complexity of blockchain mechanics to clients so they can make fully informed investment decisions about the underlying technology.</p>
+<p>B) Abstracting all blockchain complexity behind familiar financial workflows — clients see 'buy' and 'sell' buttons, receive standard investment confirmations, and access portfolio views identical to traditional investment platforms — while all wallet creation, key management, and on-chain transaction execution happens invisibly in the background.</p>
+<p>C) Requiring clients to download and manage their own self-custody hardware wallets before they can invest, ensuring they retain full control over their digital assets.</p>
+<p>D) Providing clients with printed private key backup cards and requiring them to store physical key recovery phrases in their safety deposit boxes.</p>
+<p><strong>Question 5: Market Liquidity Strategy: ATS and Market Maker Partnerships</strong>
+Your firm has successfully issued a $200 million tokenized private credit fund. Token holders are reporting that secondary market trades take days to execute and bid-ask spreads are 3-5%, making liquidity worse than promised. What structural intervention most directly addresses this liquidity quality problem?</p>
+<p>A) Reducing the token price to $1 per token to attract more retail buyers, increasing market participation through lower psychological barriers.</p>
+<p>B) Contracting professional market makers to continuously post bid and ask prices on the ATS trading venue, while simultaneously lowering the secondary market minimum trade size to attract more institutional participants — creating the liquidity depth that organic trading alone cannot generate in an asset with limited float.</p>
+<p>C) Closing the secondary market entirely and offering quarterly tender offers at NAV instead, eliminating the spread problem by removing market pricing entirely.</p>
+<p>D) Increasing the token offering size to $2 billion to generate sufficient scale for organic market liquidity, since illiquidity is exclusively a function of insufficient total AUM.</p>
+<p><strong>Question 6: Proof of Reserve for Collateral Transparency</strong>
+A tokenized commodity fund holds physical gold in a secure vault and has issued 10 million tokens, each representing 1 gram of gold. Investors are concerned about the risk that the vault attestations could be fraudulently misrepresented. Which technology mechanism provides continuous, decentralized verification of collateral authenticity?</p>
+<p>A) Annual independent audits by a Big 4 accounting firm, with audit certificates stored on the blockchain as a PDF document.</p>
+<p>B) A Proof of Reserve system where an oracle network (such as Chainlink PoR) reads vault attestation data from authorized custodians at regular intervals and publishes cryptographically signed, tamper-resistant collateral confirmations on-chain — allowing any token holder to verify in real-time that circulating token supply does not exceed the custodian's confirmed gold holdings.</p>
+<p>C) A smart contract parameter that locks the maximum token supply at 10 million during deployment, preventing any additional minting above the initially deposited gold.</p>
+<p>D) GPS tracking devices embedded in all physical gold bars, with location data published to the blockchain to prove the gold has not been moved.</p>
+<p><strong>Question 7: Phased Rollout Strategy for Institutional Trust Building</strong>
+An asset manager is preparing to tokenize a flagship $5 billion real estate fund but is concerned about the reputational risk of operational failures in front of large institutional investors. What phased rollout approach best balances innovation with risk management?</p>
+<p>A) Tokenizing the entire $5 billion fund simultaneously on a public blockchain with maximum transparency to demonstrate confidence in the technology and accelerate market adoption.</p>
+<p>B) Launching a separate, smaller ($10–50 million) pilot fund using the same technology stack, investor type, and asset class — operating it successfully through a complete investment cycle (subscription, distributions, secondary transfers) before migrating the flagship fund to a tokenized structure.</p>
+<p>C) Announcing the tokenization plan publicly before completing any technical development to generate investor interest and secure commitments in advance of actual deployment.</p>
+<p>D) Delegating the tokenization decision entirely to the technology vendor, allowing the platform provider to own both the product design and operational execution to eliminate reputational risk for the asset manager.</p>
+<p><strong>Question 8: Multi-Chain Interoperability Challenges for Institutional Issuers</strong>
+Your tokenized fund is simultaneously listed on three blockchain networks to maximize investor reach. A compliance officer identifies a critical risk: an investor who is eligible on one network might transfer tokens to a wallet on a second network where their eligibility has not been verified. How should this compliance gap be addressed?</p>
+<p>A) Restricting all cross-chain transfers permanently until every investor re-verifies eligibility on each individual chain, accepting that multi-chain operability will be unavailable indefinitely.</p>
+<p>B) Implementing a unified cross-chain identity and compliance registry that is queried by the smart contract on each chain before any transfer executes — ensuring that an investor's KYC/AML status, accreditation, and jurisdictional eligibility are verified against the canonical registry regardless of which blockchain the transaction initiates on.</p>
+<p>C) Allowing free cross-chain transfers and relying on post-trade surveillance to identify non-compliant transactions, accepting some regulatory violations as inevitable in multi-chain environments.</p>
+<p>D) Creating a separate token for each blockchain with completely independent investor registries, accepting that the same investor must complete full KYC verification separately on each chain.</p>
+<p><strong>Question 9: Technology Reliability: Business Continuity for Tokenized Assets</strong>
+Your firm's tokenized fund smart contract becomes unavailable due to a critical vulnerability discovered in the underlying blockchain's execution client. Token holders cannot execute transfers or redemptions for 72 hours. What business continuity measure should have been implemented before deployment to minimize investor impact?</p>
+<p>A) Keeping a complete backup of the entire blockchain on internal servers, allowing the fund to instantly migrate to its own private chain if the primary network experiences issues.</p>
+<p>B) Implementing an emergency pause mechanism (admin-controlled circuit breaker) that halts token transfers upon discovery of a critical issue, combined with a pre-approved manual redemption process for investors with time-sensitive liquidity needs — and a documented incident response plan with pre-established communication protocols and a tested deployment plan for contract migration.</p>
+<p>C) Building the smart contract without any admin controls so that no single party can interfere with investor redemptions, even during a technical emergency.</p>
+<p>D) Purchasing cyber insurance coverage that automatically compensates investors for any losses from blockchain downtime, transferring all business continuity responsibility to the insurer.</p>
+<p><strong>Question 10: Ecosystem Partnership Strategy for Tokenization Launch</strong>
+A mid-sized asset manager is developing a tokenization platform and must decide which capabilities to build internally versus source from partners. According to critical success factor analysis, what is the recommended build-versus-partner framework?</p>
+<p>A) Build all capabilities internally to maintain maximum control over the technology stack and eliminate third-party dependencies that create operational risk.</p>
+<p>B) Build internally only the capabilities that represent the institution's core competitive differentiator (typically: investment strategy, client relationships, and risk management). Partner with established specialists for infrastructure: tokenization platform (Securitize, Tokeny), digital custody (Fireblocks, Anchorage), legal structuring (specialized securities law firms), and secondary market access (regulated ATS).</p>
+<p>C) Partner exclusively with a single end-to-end vendor for all tokenization capabilities to minimize the number of counterparty relationships and contract negotiations.</p>
+<p>D) Build everything except the blockchain itself, since the underlying distributed ledger infrastructure is the only element that cannot be built internally at reasonable cost.</p>
+<hr />
+<h3 id="answer-key-explanations"><strong>Answer Key &amp; Explanations</strong></h3>
+<p><strong>1. Correct Answer: B</strong>
+<em>Explanation:</em> MiCA establishes explicit, graduated penalty frameworks for ART and EMT issuers. Maximum administrative penalties include: financial sanctions of up to €5 million or 12.5% of annual turnover (whichever is higher); mandatory public disclosure of violations and the identity of responsible individuals (known as 'naming and shaming'); and personal sanctions including temporary or permanent bans on executive participation in regulated activities. These penalties are designed to create strong deterrence at the institutional level. Executives must treat MiCA compliance as a non-negotiable operational requirement from day one.</p>
+<p><strong>2. Correct Answer: B</strong>
+<em>Explanation:</em> The $500M smart contract hacks that have plagued DeFi demonstrate why institutional smart contracts require maximum-rigor auditing. Industry standards for institutional-grade deployments include: (1) multiple independent audits from different specialist firms with different methodologies; (2) formal verification — mathematically proving that the contract behavior matches the specification — for the most critical functions (minting, burning, forced transfers); (3) public disclosure of audit reports to allow ongoing scrutiny; and (4) bug bounty programs to incentivize responsible disclosure after deployment. Auditing costs ($100K–$500K for complex contracts) are trivially small relative to the potential loss from a single exploited vulnerability in a $500M system.</p>
+<p><strong>3. Correct Answer: B</strong>
+<em>Explanation:</em> The Burn and Mint mechanism is the most supply-integrity-preserving cross-chain transfer method. Unlike Lock-and-Mint (where tokens are locked on the source chain and wrapped equivalents are minted on the destination — creating synthetic 'bridge risk' if the lock contract is exploited), Burn and Mint permanently destroys tokens on the source chain, ensuring they cannot be double-spent. The canonical supply count is maintained across chains because burning on one chain is verified before minting on the destination chain via a cross-chain message protocol. For institutional tokenized securities, supply integrity is critical for investor accounting and regulatory reporting.</p>
+<p><strong>4. Correct Answer: B</strong>
+<em>Explanation:</em> Research on digital asset adoption consistently shows that wallet complexity is the primary UX barrier for non-crypto-native institutional and HNW investors. The solution is radical abstraction: custodied wallets (where the platform manages keys using MPC) presented through familiar investment interfaces that match client expectations from traditional brokerage accounts. The client sees a subscription form, receives an email confirmation, and views their position in a standard portfolio dashboard — identically to a traditional fund investment. All blockchain mechanics (wallet creation, key sharding across MPC nodes, transaction signing, on-chain settlement) happen invisibly. Platforms like ADDX and Securitize implement this 'invisible blockchain' principle to maximize institutional adoption rates.</p>
+<p><strong>5. Correct Answer: B</strong>
+<em>Explanation:</em> Secondary market liquidity for tokenized securities does not emerge automatically — it must be actively engineered. Professional market makers (which may be the tokenization platform itself, an affiliated entity, or a specialist firm) provide a critical function: continuously posting bid and ask prices creates the appearance and reality of liquidity by ensuring there is always a counterparty available to trade. Without market making, a buyer may post an order and wait days for a natural seller to emerge. Market maker contracts typically specify minimum quote depth (e.g., $500K on each side), maximum spread (e.g., 0.5%), and minimum quoting hours (e.g., 8 hours per trading day) — transforming an illiquid instrument into a tradeable one.</p>
+<p><strong>6. Correct Answer: B</strong>
+<em>Explanation:</em> Proof of Reserve (PoR) systems address the critical oracle problem for asset-backed tokens: how does the blockchain 'know' what exists off-chain? Chainlink PoR aggregates attestation data from multiple authorized custodian data sources (vault management systems, third-party auditors), applies statistical consensus, and publishes the result on-chain with cryptographic attestation. The smart contract can then enforce a circuit breaker: if the on-chain collateral confirmation drops below the circulating token supply, automatic minting is halted and a redemption priority queue activates. This provides real-time, independently verifiable collateral monitoring that annual audits cannot match — and prevents the fraudulent misrepresentation that led to collapses like Wirecard and various crypto exchange failures.</p>
+<p><strong>7. Correct Answer: B</strong>
+<em>Explanation:</em> The phased pilot approach is the universally recommended strategy for institutional-grade tokenization. A separate, smaller pilot fund allows the institution to: test all operational workflows (investor onboarding, subscription, distribution, secondary transfer) end-to-end in a controlled environment; identify and resolve integration failures with custody, fund accounting, and compliance systems before they affect flagship investors; build operational confidence among legal, compliance, and operations teams; generate documented proof points for the flagship fund's investment committee; and demonstrate regulatory compliance in practice. Hamilton Lane's initial Securitize tokenization was specifically designed as a limited pilot feeder fund before broader deployment — a model now widely followed.</p>
+<p><strong>8. Correct Answer: B</strong>
+<em>Explanation:</em> Cross-chain compliance integrity requires a canonical identity layer that transcends individual blockchain networks. Standards like ERC-3643's T-REX protocol or Verifiable Credentials (W3C standard) allow an investor's KYC/AML verification and eligibility attributes to be stored in a cross-chain accessible registry. When a token transfer is initiated on Chain B, the smart contract queries the canonical registry (hosted on the primary chain or accessible via oracle) to verify the recipient's eligibility before executing. Cross-chain interoperability protocols (CCIP, LayerZero) include messaging capabilities that enable this cross-chain compliance check. This prevents the compliance fragmentation that multi-chain deployment would otherwise create.</p>
+<p><strong>9. Correct Answer: B</strong>
+<em>Explanation:</em> Enterprise business continuity for tokenized assets requires layered protection mechanisms. An admin-controlled emergency pause is the critical first layer: if a vulnerability is discovered, transfers can be halted immediately to prevent exploitation while the vulnerability is patched. This pause capability must be balanced with an immutable emergency redemption pathway — a pre-approved, audited off-chain mechanism where investors can prove token ownership and receive equivalent cash value through a traditional process if the on-chain system is unavailable. The incident response plan must include: communication protocols for token holders, pre-designated authority to activate emergency procedures, tested migration paths for contract upgrades, and pre-negotiated indemnification frameworks with technology vendors.</p>
+<p><strong>10. Correct Answer: B</strong>
+<em>Explanation:</em> The build-versus-partner decision in tokenization should follow a core-competency framework. For asset managers, the core competency is investment selection, portfolio management, and client relationships — not tokenization infrastructure engineering. Building a proprietary tokenization platform, digital custody solution, and ATS from scratch is both prohibitively expensive (hundreds of millions in development cost) and operationally risky (limited track record). The correct approach is to partner with specialists who have built, audited, and operationally proven these capabilities at institutional scale — focusing internal resources on the fund strategy and client experience that differentiate the product rather than replicating infrastructure that already exists.</p>
 
 
 
@@ -1259,13 +1374,17 @@ Building an end-to-end tokenization platform from scratch is rarely feasible or 
     wrapper.appendChild(h2);
     elements.forEach(function(e) { wrapper.appendChild(e); });
 
-    // Parse answers
+    // Parse answers — handles all formats:
+    //   **1. Answer: B**  |  **1. Correct Answer: B**
+    //   **6. Correct Answer: B**  |  **Question 1: C** (Module 2 style)
     var answers = {};
     var answerH3 = wrapper.querySelector('h3[id*="answer-key"]');
     if (answerH3) {
       var scan = answerH3.nextElementSibling;
       while (scan) {
-        var m = scan.textContent.match(/^\s*(\d+)\.\s*Answer:\s*([A-D])/i);
+        var t = scan.textContent.trim();
+        var m = t.match(/^(?:Question\s+)?(\d+)[\.:\s]*(?:Correct\s+)?Answer[:\s]+([A-D])/i);
+        if (!m) m = t.match(/^Question\s+(\d+)\s*:\s*([A-D])\s*$/i);
         if (m) answers[m[1]] = m[2].toUpperCase();
         scan = scan.nextElementSibling;
       }
@@ -1293,37 +1412,58 @@ Building an end-to-end tokenization platform from scratch is rarely feasible or 
       });
     }
 
-    // Make options clickable
+    // Make options clickable — handles two question formats:
+    //   Format A: **1. Question text?**   (strong starts with digit+dot)
+    //   Format B: **Question N: Title**   (strong starts with "Question N:")
     var qNum = 0;
+
+    function attachOption(p, qNumber) {
+      var text = p.textContent.trim();
+      p.classList.add('quiz-option');
+      p.setAttribute('data-question', String(qNumber));
+      p.setAttribute('data-option', text[0].toUpperCase());
+      p.addEventListener('click', function() {
+        var q = this.getAttribute('data-question');
+        var chosen = this.getAttribute('data-option');
+        var correct = answers[q];
+        wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
+          o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
+        });
+        this.classList.add('quiz-selected');
+        if (chosen === correct) {
+          this.classList.add('quiz-correct');
+        } else {
+          this.classList.add('quiz-incorrect');
+          var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
+          if (cEl) cEl.classList.add('quiz-reveal');
+        }
+      });
+    }
+
     wrapper.querySelectorAll('p').forEach(function(p) {
       var text = p.textContent.trim();
       var strong = p.querySelector('strong');
+
+      // Format A: **1. Question text**
       if (strong && /^\d+\./.test(strong.textContent.trim())) {
         qNum++;
         p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
         return;
       }
-      if (/^[A-D]\)/.test(text) && qNum > 0) {
-        p.classList.add('quiz-option');
+
+      // Format B: **Question N: Title** (Q6-Q10 and modules 7-16 Q1-Q5)
+      var qMatch = strong && strong.textContent.trim().match(/^Question\s+(\d+)\s*:/i);
+      if (qMatch) {
+        qNum = parseInt(qMatch[1]);
+        p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
-        p.setAttribute('data-option', text[0].toUpperCase());
-        p.addEventListener('click', function() {
-          var q = this.getAttribute('data-question');
-          var chosen = this.getAttribute('data-option');
-          var correct = answers[q];
-          wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
-            o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
-          });
-          this.classList.add('quiz-selected');
-          if (chosen === correct) {
-            this.classList.add('quiz-correct');
-          } else {
-            this.classList.add('quiz-incorrect');
-            var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
-            if (cEl) cEl.classList.add('quiz-reveal');
-          }
-        });
+        return;
+      }
+
+      // Option line: A) / B) / C) / D)
+      if (/^[A-D]\)/.test(text) && qNum > 0) {
+        attachOption(p, qNum);
       }
     });
     console.log('[quiz] done, ' + qNum + ' questions');

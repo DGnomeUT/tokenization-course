@@ -1430,6 +1430,36 @@
 <p>B) Utilizing network architectures like Canton (which offers "sub-transaction privacy") or utilizing Solanas Token-2022 extensions (which use Zero-Knowledge proofs for confidential transfers).</p>
 <p>C) Keeping the tokenized assets fully within cold storage hardware wallets and only broadcasting net settlement changes on a quarterly basis.</p>
 <p>D) Minting the tokens as standard ERC-20s but using decentralized cryptocurrency "mixers" to anonymize the flow of funds between the banks.</p>
+<p><strong>Question 6: Permissioned vs Permissionless Blockchains for Institutional Use</strong>
+Your bank's Chief Risk Officer is evaluating blockchain options for a new tokenized bond platform. The primary requirements are: regulatory data privacy, known counterparty validation, and compliance with enterprise governance standards. Which network architecture best meets these requirements?</p>
+<p>A) A fully public, permissionless blockchain like Ethereum mainnet, because it offers the deepest liquidity and broadest DeFi integration for institutional yield optimization.</p>
+<p>B) A private, permissioned blockchain where the institution controls validator identity, data access, and governance — ensuring regulatory compliance, transaction privacy, and enterprise-grade performance.</p>
+<p>C) A proof-of-work blockchain, because its energy-intensive consensus mechanism provides the strongest mathematical security guarantees for high-value institutional assets.</p>
+<p>D) A decentralized autonomous organization (DAO) governance chain, because it eliminates the need for legal entities by encoding all business logic directly into immutable smart contracts.</p>
+<p><strong>Question 7: Public Blockchain Selection for Tokenized Assets</strong>
+An asset manager wishes to issue a tokenized Treasury fund accessible to global institutional investors via DeFi protocols. The priorities are: established institutional liquidity, regulatory familiarity, and DeFi composability. How should the team evaluate Ethereum versus Solana as deployment options?</p>
+<p>A) Solana is the SEC-approved standard for tokenized securities in the United States and therefore the mandatory deployment chain for any U.S.-compliant product.</p>
+<p>B) Ethereum offers the deepest institutional DeFi ecosystem, the most regulatory familiarity, and the greatest track record of uptime, but may carry higher gas costs; Solana offers higher throughput and lower fees but has a shorter institutional track record and historical network outages.</p>
+<p>C) Both networks are functionally identical for institutional tokenization, and the selection should be based solely on the personal preference of the technology team.</p>
+<p>D) Ethereum's transition to Proof-of-Stake fundamentally compromised its security model, making Solana the only viable choice for institutional security token issuance.</p>
+<p><strong>Question 8: Limitations of ERC-20 for Regulated Securities</strong>
+Your compliance officer has flagged a critical risk: the proposed tokenized private equity fund uses a standard ERC-20 token, which allows any wallet holder to transfer tokens to any other wallet without restriction. Why is this design unacceptable for a regulated financial product?</p>
+<p>A) ERC-20 tokens cannot support fractional unit pricing above 18 decimal places, preventing accurate NAV calculation for private equity fund shares.</p>
+<p>B) ERC-20 tokens lack built-in transfer restriction mechanisms, investor whitelisting, and forced transfer capabilities — all required to prevent unauthorized secondary trading and enforce securities regulations.</p>
+<p>C) ERC-20 tokens are incompatible with Multi-Party Computation (MPC) custody architectures, creating irreconcilable key management vulnerabilities.</p>
+<p>D) ERC-20 tokens automatically burn themselves after 30 days if not transferred, creating an unacceptable operational risk for long-duration investment products.</p>
+<p><strong>Question 9: Proof of Reserve and Collateral Verification</strong>
+Institutional investors in your tokenized Treasury bill product demand continuous, verifiable proof that on-chain tokens are fully backed by equivalent off-chain T-bills held at the custodian. Which infrastructure component most directly and continuously addresses this transparency requirement?</p>
+<p>A) An annual independent audit report confirming that the custodian's T-bill holdings match the circulating token supply, published on the issuer's investor relations website.</p>
+<p>B) A decentralized oracle network with Proof of Reserve functionality that continuously reads custodian attestations and publishes on-chain verification that the off-chain collateral matches circulating supply in real-time.</p>
+<p>C) A blockchain explorer that allows public viewing of all token transfer transactions, providing transparency through historical transaction records.</p>
+<p>D) A smart contract parameter that hard-codes the maximum token supply at launch, preventing any additional minting above the initially deposited collateral.</p>
+<p><strong>Question 10: Layer-2 Scaling for Institutional Trading</strong>
+A trading desk requires near-instant transaction finality for high-frequency settlement of tokenized bonds while maintaining Ethereum's security guarantees. Which infrastructure architecture achieves both objectives?</p>
+<p>A) Migrating all assets to a competing Layer-1 blockchain with faster block times, accepting the loss of Ethereum's security and liquidity ecosystem.</p>
+<p>B) Deploying on an Ethereum Layer-2 rollup (such as zkSync or Optimism) that processes transactions off-chain and posts cryptographic proofs to Ethereum mainnet, achieving high throughput with mainnet-level security finality.</p>
+<p>C) Implementing a centralized off-chain matching engine that batches and nets all trades, settling aggregated positions to Ethereum at weekly intervals to minimize gas consumption.</p>
+<p>D) Sharding the Ethereum mainnet across multiple geographic nodes to reduce per-transaction latency without any architectural changes to the consensus or execution layer.</p>
 <hr />
 <h3 id="answer-key-explanations">Answer Key &amp; Explanations</h3>
 <p><strong>Question 1: C</strong></p>
@@ -1442,6 +1472,16 @@
 <p><em>Explanation:</em> Tokenizing real-world assets introduces the risk that tokens are minted without the corresponding off-chain collateral. Decentralized oracles providing "Proof of Reserve" can continuously feed off-chain custodian data into the blockchain. The smart contract can be programmed as a circuit breaker (Secure Mint) to automatically halt minting or trading if the off-chain reserves do not fully collateralize the on-chain token supply.</p>
 <p><strong>Question 5: B</strong></p>
 <p><em>Explanation:</em> Public and shared ledgers inherently expose transaction data, which violates the privacy requirements of traditional finance. To maintain the benefits of shared infrastructure without leaking sensitive data, institutions must use architectures designed for privacy. The Canton Network solves this via "sub-transaction privacy" (parties only see data they are permissioned to see), and Solana's Token-2022 standard solves it natively using Zero-Knowledge (ZK) proofs to mask account balances and transfer amounts.</p>
+<p><strong>6. Correct Answer: B</strong>
+<em>Explanation:</em> Permissioned blockchains are the standard choice for institutional issuers because they restrict participation to known, vetted entities — satisfying KYC/AML requirements. They offer configurable privacy controls (preventing competitors from viewing transaction data), faster consensus (with known validators), and governance frameworks aligned with regulatory expectations. Institutions like JPMorgan (Kinexys) and major custodians use permissioned networks precisely for these reasons.</p>
+<p><strong>7. Correct Answer: B</strong>
+<em>Explanation:</em> Ethereum remains the dominant platform for institutional DeFi integration, with products like BlackRock's BUIDL and Franklin Templeton's FOBXX deployed there specifically for access to its established liquidity and DeFi ecosystem. Solana offers technical advantages in speed and cost but has had historical network outages and a shorter institutional track record. The selection depends on the issuer's specific priorities — institutional composability favors Ethereum; high-frequency lower-cost operations may favor Solana.</p>
+<p><strong>8. Correct Answer: B</strong>
+<em>Explanation:</em> ERC-20 was designed for permissionless fungible token transfers without any built-in compliance logic. For regulated securities, this is a fundamental design failure: tokens can be transferred to non-accredited investors, sanctioned addresses, or across prohibited jurisdictions without any automatic prevention. Compliance-aware standards like ERC-1400 and ERC-3643 address this by embedding investor whitelists, jurisdictional restrictions, lock-up periods, and forced transfer capabilities (for court orders) directly into the token's smart contract logic.</p>
+<p><strong>9. Correct Answer: B</strong>
+<em>Explanation:</em> Proof of Reserve (PoR) systems — such as those provided by Chainlink — create continuous, automated, on-chain verification that the off-chain assets backing a token actually exist. Oracle networks read custodian data feeds and publish attestations directly to the blockchain, giving any market participant real-time verifiability without relying on periodic audits or trusting the issuer's self-reporting. This is the institutional standard for transparent asset backing.</p>
+<p><strong>10. Correct Answer: B</strong>
+<em>Explanation:</em> Layer-2 rollups batch transactions off-chain and submit compressed cryptographic proofs (ZK-rollups) or fraud proofs (Optimistic rollups) to Ethereum mainnet. This achieves transaction throughputs of thousands per second with sub-second finality while inheriting Ethereum's battle-tested security model. Institutional platforms favor this approach because it combines the scalability needed for high-frequency settlement with the trust and regulatory familiarity of Ethereum's security layer.</p>
 
 
 
@@ -1551,13 +1591,17 @@
     wrapper.appendChild(h2);
     elements.forEach(function(e) { wrapper.appendChild(e); });
 
-    // Parse answers
+    // Parse answers — handles all formats:
+    //   **1. Answer: B**  |  **1. Correct Answer: B**
+    //   **6. Correct Answer: B**  |  **Question 1: C** (Module 2 style)
     var answers = {};
     var answerH3 = wrapper.querySelector('h3[id*="answer-key"]');
     if (answerH3) {
       var scan = answerH3.nextElementSibling;
       while (scan) {
-        var m = scan.textContent.match(/^\s*(\d+)\.\s*Answer:\s*([A-D])/i);
+        var t = scan.textContent.trim();
+        var m = t.match(/^(?:Question\s+)?(\d+)[\.:\s]*(?:Correct\s+)?Answer[:\s]+([A-D])/i);
+        if (!m) m = t.match(/^Question\s+(\d+)\s*:\s*([A-D])\s*$/i);
         if (m) answers[m[1]] = m[2].toUpperCase();
         scan = scan.nextElementSibling;
       }
@@ -1585,37 +1629,58 @@
       });
     }
 
-    // Make options clickable
+    // Make options clickable — handles two question formats:
+    //   Format A: **1. Question text?**   (strong starts with digit+dot)
+    //   Format B: **Question N: Title**   (strong starts with "Question N:")
     var qNum = 0;
+
+    function attachOption(p, qNumber) {
+      var text = p.textContent.trim();
+      p.classList.add('quiz-option');
+      p.setAttribute('data-question', String(qNumber));
+      p.setAttribute('data-option', text[0].toUpperCase());
+      p.addEventListener('click', function() {
+        var q = this.getAttribute('data-question');
+        var chosen = this.getAttribute('data-option');
+        var correct = answers[q];
+        wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
+          o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
+        });
+        this.classList.add('quiz-selected');
+        if (chosen === correct) {
+          this.classList.add('quiz-correct');
+        } else {
+          this.classList.add('quiz-incorrect');
+          var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
+          if (cEl) cEl.classList.add('quiz-reveal');
+        }
+      });
+    }
+
     wrapper.querySelectorAll('p').forEach(function(p) {
       var text = p.textContent.trim();
       var strong = p.querySelector('strong');
+
+      // Format A: **1. Question text**
       if (strong && /^\d+\./.test(strong.textContent.trim())) {
         qNum++;
         p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
         return;
       }
-      if (/^[A-D]\)/.test(text) && qNum > 0) {
-        p.classList.add('quiz-option');
+
+      // Format B: **Question N: Title** (Q6-Q10 and modules 7-16 Q1-Q5)
+      var qMatch = strong && strong.textContent.trim().match(/^Question\s+(\d+)\s*:/i);
+      if (qMatch) {
+        qNum = parseInt(qMatch[1]);
+        p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
-        p.setAttribute('data-option', text[0].toUpperCase());
-        p.addEventListener('click', function() {
-          var q = this.getAttribute('data-question');
-          var chosen = this.getAttribute('data-option');
-          var correct = answers[q];
-          wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
-            o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
-          });
-          this.classList.add('quiz-selected');
-          if (chosen === correct) {
-            this.classList.add('quiz-correct');
-          } else {
-            this.classList.add('quiz-incorrect');
-            var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
-            if (cEl) cEl.classList.add('quiz-reveal');
-          }
-        });
+        return;
+      }
+
+      // Option line: A) / B) / C) / D)
+      if (/^[A-D]\)/.test(text) && qNum > 0) {
+        attachOption(p, qNum);
       }
     });
     console.log('[quiz] done, ' + qNum + ' questions');

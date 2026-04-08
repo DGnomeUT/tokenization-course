@@ -1044,13 +1044,17 @@
     wrapper.appendChild(h2);
     elements.forEach(function(e) { wrapper.appendChild(e); });
 
-    // Parse answers
+    // Parse answers — handles all formats:
+    //   **1. Answer: B**  |  **1. Correct Answer: B**
+    //   **6. Correct Answer: B**  |  **Question 1: C** (Module 2 style)
     var answers = {};
     var answerH3 = wrapper.querySelector('h3[id*="answer-key"]');
     if (answerH3) {
       var scan = answerH3.nextElementSibling;
       while (scan) {
-        var m = scan.textContent.match(/^\s*(\d+)\.\s*Answer:\s*([A-D])/i);
+        var t = scan.textContent.trim();
+        var m = t.match(/^(?:Question\s+)?(\d+)[\.:\s]*(?:Correct\s+)?Answer[:\s]+([A-D])/i);
+        if (!m) m = t.match(/^Question\s+(\d+)\s*:\s*([A-D])\s*$/i);
         if (m) answers[m[1]] = m[2].toUpperCase();
         scan = scan.nextElementSibling;
       }
@@ -1078,37 +1082,58 @@
       });
     }
 
-    // Make options clickable
+    // Make options clickable — handles two question formats:
+    //   Format A: **1. Question text?**   (strong starts with digit+dot)
+    //   Format B: **Question N: Title**   (strong starts with "Question N:")
     var qNum = 0;
+
+    function attachOption(p, qNumber) {
+      var text = p.textContent.trim();
+      p.classList.add('quiz-option');
+      p.setAttribute('data-question', String(qNumber));
+      p.setAttribute('data-option', text[0].toUpperCase());
+      p.addEventListener('click', function() {
+        var q = this.getAttribute('data-question');
+        var chosen = this.getAttribute('data-option');
+        var correct = answers[q];
+        wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
+          o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
+        });
+        this.classList.add('quiz-selected');
+        if (chosen === correct) {
+          this.classList.add('quiz-correct');
+        } else {
+          this.classList.add('quiz-incorrect');
+          var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
+          if (cEl) cEl.classList.add('quiz-reveal');
+        }
+      });
+    }
+
     wrapper.querySelectorAll('p').forEach(function(p) {
       var text = p.textContent.trim();
       var strong = p.querySelector('strong');
+
+      // Format A: **1. Question text**
       if (strong && /^\d+\./.test(strong.textContent.trim())) {
         qNum++;
         p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
         return;
       }
-      if (/^[A-D]\)/.test(text) && qNum > 0) {
-        p.classList.add('quiz-option');
+
+      // Format B: **Question N: Title** (Q6-Q10 and modules 7-16 Q1-Q5)
+      var qMatch = strong && strong.textContent.trim().match(/^Question\s+(\d+)\s*:/i);
+      if (qMatch) {
+        qNum = parseInt(qMatch[1]);
+        p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
-        p.setAttribute('data-option', text[0].toUpperCase());
-        p.addEventListener('click', function() {
-          var q = this.getAttribute('data-question');
-          var chosen = this.getAttribute('data-option');
-          var correct = answers[q];
-          wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
-            o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
-          });
-          this.classList.add('quiz-selected');
-          if (chosen === correct) {
-            this.classList.add('quiz-correct');
-          } else {
-            this.classList.add('quiz-incorrect');
-            var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
-            if (cEl) cEl.classList.add('quiz-reveal');
-          }
-        });
+        return;
+      }
+
+      // Option line: A) / B) / C) / D)
+      if (/^[A-D]\)/.test(text) && qNum > 0) {
+        attachOption(p, qNum);
       }
     });
     console.log('[quiz] done, ' + qNum + ' questions');

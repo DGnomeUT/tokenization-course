@@ -1451,6 +1451,36 @@
 <p>B) Traditional legal and tax constructs colliding with novel tokenization workflows, creating interpretive challenges around issuance, transfer agency, and custody.</p>
 <p>C) The inability of permissioned networks to execute automated KYC/AML checks on secondary market trades.</p>
 <p>D) Insufficient block sizes on institutional subnets preventing high-frequency trading execution.</p>
+<p><strong>Question 6: ERC-3643 for Institutional Compliance Integration</strong>
+A global custodian is integrating a tokenized fund onto its platform and must ensure all secondary market transfers automatically verify investor eligibility (accreditation status, KYC clearance, and jurisdictional restrictions) without manual intervention. Which technological approach embeds these compliance requirements most directly?</p>
+<p>A) Relying on off-chain legal agreements that require fund administrators to manually review each transfer request within 48 hours before approving the transaction.</p>
+<p>B) Deploying tokens using the ERC-3643 standard, which integrates an on-chain identity registry (T-REX protocol) that automatically checks investor eligibility at the smart contract level before any transfer executes.</p>
+<p>C) Using a standard ERC-20 token structure and enforcing compliance exclusively through the Alternative Trading System (ATS) that hosts secondary market trading.</p>
+<p>D) Requiring all investors to complete a new KYC verification for each individual secondary market transfer, preventing unauthorized trading through administrative friction.</p>
+<p><strong>Question 7: Network-of-Networks Interoperability Strategy</strong>
+Your institution operates a private permissioned blockchain for institutional bond settlements and needs to interact with public Ethereum-based DeFi protocols for liquidity. What architectural principle must guide your interoperability strategy?</p>
+<p>A) Migrating all assets from the private network to a single public blockchain to eliminate the complexity of multi-chain interoperability entirely.</p>
+<p>B) Adopting a network-of-networks approach using standardized interoperability protocols (such as Chainlink CCIP) and unified data standards (like ISO 20022 messaging) to enable secure asset and data flows between private and public networks.</p>
+<p>C) Maintaining strict isolation between the private institutional network and all public chains, preventing any cross-chain interaction to eliminate smart contract exploit risk.</p>
+<p>D) Building a proprietary bridge contract managed by an internal team, avoiding third-party interoperability protocols that introduce external counterparty risk.</p>
+<p><strong>Question 8: ISO 20022 and Data Standardization</strong>
+A payments infrastructure team is building a tokenized cross-border settlement system that must integrate with correspondent banks using traditional SWIFT messaging. What data standardization requirement is critical to prevent reconciliation failures between the tokenized rail and legacy payment systems?</p>
+<p>A) Adopting a proprietary token metadata schema optimized for blockchain storage efficiency, since SWIFT's XML-based messaging is fundamentally incompatible with distributed ledger architectures.</p>
+<p>B) Implementing ISO 20022-compliant messaging standards for transaction data, ensuring consistent identifiers, taxonomies, and structured data fields that both the tokenized ledger and SWIFT-connected legacy systems can interpret without manual translation.</p>
+<p>C) Requiring all counterparty banks to deploy Ethereum node infrastructure before participating in cross-border tokenized settlements, standardizing on a single technical stack.</p>
+<p>D) Using free-form text fields in token metadata to maximize flexibility, relying on correspondent banks to manually parse and reconcile non-standard transaction descriptions.</p>
+<p><strong>Question 9: Repo Market Modernization Through Tokenization</strong>
+A major investment bank executes trillions in annual repo transactions, where securities serve as collateral against short-term cash loans. Today this process requires manual collateral movements, T+0 to T+2 settlement delays, and intraday margin calls that tie up capital. How does tokenization most directly address these operational frictions?</p>
+<p>A) By eliminating collateral requirements entirely, since smart contracts automatically enforce loan repayment terms without needing security interests in assets.</p>
+<p>B) By enabling intraday atomic Delivery-versus-Payment (DvP) settlement of tokenized collateral, smart contract-automated margin substitution, and real-time collateral mobility — reducing settlement risk and unlocking trapped intraday liquidity.</p>
+<p>C) By converting all repo counterparties into anonymous DeFi participants, removing the bilateral counterparty relationship and replacing it with automated liquidity pool contracts.</p>
+<p>D) By replacing securities collateral with tokenized cryptocurrencies, whose 24/7 market pricing eliminates the need for overnight valuation adjustments.</p>
+<p><strong>Question 10: Compliance Integration: Reg D and Reg A+ for U.S. Tokenized Offerings</strong>
+A U.S.-based fintech is structuring a tokenized real estate fund with two tranches: one for accredited investors only (unlimited offering size) and one targeting non-accredited retail investors (capped offering size). Which regulatory framework combination governs these two tranches respectively under U.S. securities law?</p>
+<p>A) Both tranches are regulated under Regulation S (Reg S), which governs all offshore securities offerings regardless of investor accreditation status.</p>
+<p>B) The accredited investor tranche is offered under Regulation D (Reg D) Rule 506(c), permitting unlimited raise size with general solicitation; the retail tranche is offered under Regulation A+ (Reg A+) Tier 2, permitting up to $75 million from unaccredited investors with ongoing SEC reporting.</p>
+<p>C) Both tranches are automatically regulated under the Investment Company Act of 1940 since they represent fractional interests in pooled real estate assets.</p>
+<p>D) The retail tranche requires a full Regulation S-1 IPO registration, while the accredited investor tranche can proceed under an unregistered private placement with no filing requirements.</p>
 <hr />
 <h3 id="answer-key-explanations">Answer Key &amp; Explanations</h3>
 <p><strong>1. Answer: B</strong></p>
@@ -1463,6 +1493,16 @@
 <p><em>Explanation:</em> Integrating traditional account-based structures with on-chain wallet-level ownership poses a significant challenge. Specifically, traditional omnibus custody models group assets together, which obscures investor-level rights and makes it incredibly difficult to accurately map individual entitlements across on-chain and off-chain systems, leading to fragmented position consolidation and reconciliation breaks.</p>
 <p><strong>5. Answer: B</strong></p>
 <p><em>Explanation:</em> Some of the most persistent friction points inhibiting scale are not "crypto-native" problems, but rather traditional legal, tax, and securities rules colliding with DLT. Even when the technology works perfectly, these legacy constructs create complex interpretive challenges when distributed ledger technology alters the "how" of transfer agency, asset issuance, and custody.</p>
+<p><strong>6. Correct Answer: B</strong>
+<em>Explanation:</em> ERC-3643 (the T-REX standard) is specifically designed for institutional compliance integration. It embeds an on-chain identity registry that stores verified investor attributes (accreditation status, jurisdiction, KYC clearance). Every token transfer triggers an automatic on-chain check against this registry — if the receiving wallet lacks the required verified status, the transfer is automatically blocked at the smart contract level. This eliminates manual compliance bottlenecks while enforcing regulatory requirements continuously and automatically.</p>
+<p><strong>7. Correct Answer: B</strong>
+<em>Explanation:</em> The tokenization ecosystem will not consolidate onto a single blockchain. Regulatory requirements drive institutional assets to private networks, while liquidity and DeFi composability require public chain access. The network-of-networks approach — using battle-tested cross-chain interoperability protocols (CCIP) with standardized messaging formats (ISO 20022) — allows institutions to move assets and data securely across network boundaries. This prevents the 'digital island' trap while maintaining institutional control over private network participation.</p>
+<p><strong>8. Correct Answer: B</strong>
+<em>Explanation:</em> ISO 20022 is the global standard for financial messaging, adopted by SWIFT and most major central bank payment systems (including TARGET2 and Fedwire). When tokenized settlement rails use ISO 20022-compatible data structures — consistent LEIs, ISINs, amount formats, and transaction codes — both the on-chain ledger and legacy SWIFT-connected systems can read and process the same transaction data without manual reconciliation. This standardization is essential for achieving straight-through processing (STP) in cross-chain institutional settlements.</p>
+<p><strong>9. Correct Answer: B</strong>
+<em>Explanation:</em> JPMorgan's Kinexys platform demonstrates the repo use case: tokenized collateral can be moved atomically (instantaneously and simultaneously) with the cash leg via smart contracts, eliminating the T+2 settlement delay and reducing counterparty risk. Smart contracts can also automate intraday margin calls and collateral substitution without manual intervention, freeing capital that would otherwise be locked awaiting settlement. This is why JPMorgan processes approximately $2 billion per day on Kinexys — primarily intraday repo and collateral mobility.</p>
+<p><strong>10. Correct Answer: B</strong>
+<em>Explanation:</em> Regulation D Rule 506(c) allows issuers to raise unlimited capital from verified accredited investors with general solicitation permitted — making it the standard path for institutional tokenized securities. Regulation A+ Tier 2 allows raises up to $75 million annually from non-accredited retail investors with a qualified SEC offering circular but without a full S-1 registration. Smart contract compliance logic must embed accreditation verification for Reg D tranches and investor caps for Reg A+ tranches, automatically enforcing these rules on every secondary transfer.</p>
 
 
 
@@ -1572,13 +1612,17 @@
     wrapper.appendChild(h2);
     elements.forEach(function(e) { wrapper.appendChild(e); });
 
-    // Parse answers
+    // Parse answers — handles all formats:
+    //   **1. Answer: B**  |  **1. Correct Answer: B**
+    //   **6. Correct Answer: B**  |  **Question 1: C** (Module 2 style)
     var answers = {};
     var answerH3 = wrapper.querySelector('h3[id*="answer-key"]');
     if (answerH3) {
       var scan = answerH3.nextElementSibling;
       while (scan) {
-        var m = scan.textContent.match(/^\s*(\d+)\.\s*Answer:\s*([A-D])/i);
+        var t = scan.textContent.trim();
+        var m = t.match(/^(?:Question\s+)?(\d+)[\.:\s]*(?:Correct\s+)?Answer[:\s]+([A-D])/i);
+        if (!m) m = t.match(/^Question\s+(\d+)\s*:\s*([A-D])\s*$/i);
         if (m) answers[m[1]] = m[2].toUpperCase();
         scan = scan.nextElementSibling;
       }
@@ -1606,37 +1650,58 @@
       });
     }
 
-    // Make options clickable
+    // Make options clickable — handles two question formats:
+    //   Format A: **1. Question text?**   (strong starts with digit+dot)
+    //   Format B: **Question N: Title**   (strong starts with "Question N:")
     var qNum = 0;
+
+    function attachOption(p, qNumber) {
+      var text = p.textContent.trim();
+      p.classList.add('quiz-option');
+      p.setAttribute('data-question', String(qNumber));
+      p.setAttribute('data-option', text[0].toUpperCase());
+      p.addEventListener('click', function() {
+        var q = this.getAttribute('data-question');
+        var chosen = this.getAttribute('data-option');
+        var correct = answers[q];
+        wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
+          o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
+        });
+        this.classList.add('quiz-selected');
+        if (chosen === correct) {
+          this.classList.add('quiz-correct');
+        } else {
+          this.classList.add('quiz-incorrect');
+          var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
+          if (cEl) cEl.classList.add('quiz-reveal');
+        }
+      });
+    }
+
     wrapper.querySelectorAll('p').forEach(function(p) {
       var text = p.textContent.trim();
       var strong = p.querySelector('strong');
+
+      // Format A: **1. Question text**
       if (strong && /^\d+\./.test(strong.textContent.trim())) {
         qNum++;
         p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
         return;
       }
-      if (/^[A-D]\)/.test(text) && qNum > 0) {
-        p.classList.add('quiz-option');
+
+      // Format B: **Question N: Title** (Q6-Q10 and modules 7-16 Q1-Q5)
+      var qMatch = strong && strong.textContent.trim().match(/^Question\s+(\d+)\s*:/i);
+      if (qMatch) {
+        qNum = parseInt(qMatch[1]);
+        p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
-        p.setAttribute('data-option', text[0].toUpperCase());
-        p.addEventListener('click', function() {
-          var q = this.getAttribute('data-question');
-          var chosen = this.getAttribute('data-option');
-          var correct = answers[q];
-          wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
-            o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
-          });
-          this.classList.add('quiz-selected');
-          if (chosen === correct) {
-            this.classList.add('quiz-correct');
-          } else {
-            this.classList.add('quiz-incorrect');
-            var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
-            if (cEl) cEl.classList.add('quiz-reveal');
-          }
-        });
+        return;
+      }
+
+      // Option line: A) / B) / C) / D)
+      if (/^[A-D]\)/.test(text) && qNum > 0) {
+        attachOption(p, qNum);
       }
     });
     console.log('[quiz] done, ' + qNum + ' questions');

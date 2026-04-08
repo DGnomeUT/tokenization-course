@@ -1435,7 +1435,7 @@
 </ol>
 <p><em>For the full annotated reading list of 15 essential resources, visit the <a href="https://DGnomeUT.github.io/tokenization-course/final-reading-list/">Essential Reading List</a>.</em></p>
 <h2 id="executive-refresher">Executive Refresher</h2>
-<p><strong>Multi-Trillion Dollar Growth Engine:</strong> The tokenization of private marketsâspanning private equity, private credit, and real estateâis projected to reach up to $4 trillion in tokenized assets by 2030. Successfully distributing these alternative investments to wealthy individuals represents a potential $400 billion annual revenue opportunity for asset managers and distributors.</p>
+<p><strong>Multi-Trillion Dollar Growth Engine:</strong> The tokenization of private markets—spanning private equity, private credit, and real estate—is projected to reach up to $4 trillion in tokenized assets by 2030. Successfully distributing these alternative investments to wealthy individuals represents a potential $400 billion annual revenue opportunity for asset managers and distributors.</p>
 <p><strong>Democratization Through Fractionalization:</strong> Traditional private equity and credit funds typically require high minimum investments ranging from $1 million to $5 million, effectively locking out non-institutional capital. Tokenization divides these assets into smaller, programmable units, lowering minimum thresholds to as little as $10,000 to $20,000 and unlocking the massive $150 trillion global pool of individual wealth.</p>
 <p><strong>Unlocking Secondary Liquidity:</strong> Investors in private markets have historically been constrained by 7-to-10-year lock-up periods with virtually no exit options. Tokenization enables the creation of secondary markets where limited partnership (LP) interests and private debt can be traded seamlessly, providing investors with earlier liquidity, 24/7 trading capabilities, and better price discovery.</p>
 <p><strong>Operational Automation via Smart Contracts:</strong> Tokenization replaces manual, siloed fund administration with self-executing smart contracts. This allows for the automated execution of capital calls, waterfall profit distributions, and KYC/AML compliance checks directly on the blockchain, significantly reducing administrative overhead, eliminating reconciliation delays, and shortening settlement times to near-instant execution. </p>
@@ -1447,7 +1447,7 @@
 <p>In traditional private equity, Limited Partners (LPs) face a "cash drag" due to the unpredictable, time-sensitive nature of capital calls, forcing them to hold highly liquid, low-yield reserves. How does tokenization offer a structurally new paradigm to solve this inefficiency?</p>
 <p>A) By converting the entire private equity fund into a continuously traded public ETF, eliminating the need for capital calls.</p>
 <p>B) By eliminating capital calls entirely and requiring 100% of the committed capital to be funded in fiat upfront.</p>
-<p>C) By allowing investors to park committed capital in a liquid, yield-bearing tokenized vehicle that automatically redeems via smart contracts to satisfy the PE fundâs capital calls.</p>
+<p>C) By allowing investors to park committed capital in a liquid, yield-bearing tokenized vehicle that automatically redeems via smart contracts to satisfy the PE fund’s capital calls.</p>
 <p>D) By issuing utility tokens to LPs that they can stake to defer their capital call obligations indefinitely.</p>
 <p><strong>Question 2: Aligning GP Incentives for Secondary Liquidity</strong></p>
 <p>A major friction point for secondary trading in private markets is that General Partners (GPs) typically have the right to veto the sale of LP interests, especially at a discount. How can smart contracts be designed to financially incentivize GPs to support secondary tokenized liquidity?</p>
@@ -1473,6 +1473,36 @@
 <p>B) Holding the physical asset within a Tokenized Special Purpose Vehicle (SPV) or Trust, and issuing tokens that represent indirect equity interests in that legal entity.</p>
 <p>C) Converting the property's estimated value into a fiat-pegged stablecoin that can be freely used for payments.</p>
 <p>D) Issuing utility tokens that grant investors the right to use the property, thereby completely bypassing global securities laws.</p>
+<p><strong>Question 6: Tokenization of Venture Capital Fund Interests</strong>
+A venture capital fund manager is exploring tokenization to provide early-stage investors with secondary market liquidity for their LP interests. What is the most significant structural challenge unique to VC fund tokenization compared to other private market asset classes?</p>
+<p>A) Venture capital investments generate such high returns that tokenization would eliminate the fund's ability to maintain performance fees (carried interest) under existing LP agreements.</p>
+<p>B) VC fund interests are highly illiquid, NAV-opaque (portfolio companies have no public market pricing), and often subject to complex rights (pro-rata, information rights, co-investment) that are difficult to embed into standardized token structures — making secondary market pricing and transfer restriction programming significantly more complex than tokenizing fixed-income or real estate assets.</p>
+<p>C) Tokenizing VC fund interests is currently prohibited globally under all securities regulatory frameworks due to the risk of retail investor exposure to early-stage company losses.</p>
+<p>D) Venture capital funds cannot legally have more than 100 investors under any jurisdiction's securities laws, making fractional tokenization structurally impossible.</p>
+<p><strong>Question 7: Infrastructure Asset Tokenization: Specific Characteristics</strong>
+A pension fund is evaluating an investment in tokenized infrastructure assets (toll roads, airports, renewable energy). What specific tokenization benefit is most material for the pension fund's asset-liability management requirements?</p>
+<p>A) Tokenized infrastructure provides cryptocurrency-like volatility, allowing the pension fund to actively trade positions for capital gains rather than relying solely on long-duration income.</p>
+<p>B) Tokenized infrastructure enables programmable distribution of long-duration, inflation-linked cash flows (from regulated concession contracts) directly to pension fund wallets via smart contracts — providing the liability-matching income profile that pension ALM requires, with real-time reporting replacing the quarterly paper-based reporting of traditional infrastructure funds.</p>
+<p>C) Infrastructure tokenization eliminates all regulatory approval requirements for pension fund alternative investments, simplifying investment committee approval processes.</p>
+<p>D) Tokenized infrastructure assets have shorter duration than traditional infrastructure investments, reducing pension funds' exposure to interest rate risk.</p>
+<p><strong>Question 8: Private Equity Token Lock-Up and GP Consent Mechanisms</strong>
+A private equity fund is tokenizing LP interests but must maintain the GP's customary right to approve all LP secondary transfers while simultaneously providing limited secondary market liquidity. How should the smart contract be designed to honor both requirements?</p>
+<p>A) The smart contract should eliminate the GP consent requirement entirely since blockchain's immutability makes consent mechanisms technically impossible.</p>
+<p>B) The smart contract should embed a programmable transfer restriction that routes all secondary transfer requests to a GP-controlled approval function — the GP's digital signature is required before the token transfer executes — while the ATS or secondary platform provides the marketplace infrastructure where potential buyers can indicate interest pending GP approval.</p>
+<p>C) The smart contract should allow all transfers freely without GP approval but charge a 20% automatic transfer fee that the GP receives as compensation for waiving consent rights.</p>
+<p>D) The GP consent requirement can only be satisfied by using a fully off-chain transfer mechanism, making smart contract-based secondary trading structurally incompatible with private equity fund governance.</p>
+<p><strong>Question 9: Real Estate Tokenization: Automated Rental Distribution</strong>
+A commercial real estate firm has tokenized a 200-unit apartment building, with token holders entitled to proportional monthly rental income. What operational mechanism enables automatic, trustless distribution of rental income to token holders without fund administrator manual intervention?</p>
+<p>A) The property management company emails rental collection confirmations to a blockchain administrator who manually triggers distribution transactions each month.</p>
+<p>B) A smart contract programmed with the distribution schedule holds the SPV's rental income in a designated wallet; when monthly rental collections are received and verified by an oracle, the contract automatically calculates each token holder's proportional share and executes distributions to all registered wallets simultaneously — providing instant, verifiable income distribution without administrator intervention.</p>
+<p>C) Token holders must actively claim their rental income each month by submitting a transaction request, which the smart contract validates against their token balance before releasing their share.</p>
+<p>D) Rental income distributions require court-supervised trustee approval before any smart contract can execute, since rental income from real property is legally classified as fiduciary funds under all jurisdictions.</p>
+<p><strong>Question 10: Private Credit Information Asymmetry and On-Chain Transparency</strong>
+A private credit lender tokenizes a portfolio of mid-market corporate loans. Investors in the tokenized credit pool are concerned about ongoing collateral monitoring — historically a major information asymmetry problem in private lending. How does tokenization most directly reduce this risk?</p>
+<p>A) Tokenization eliminates credit risk by automatically diversifying the loan portfolio across unlimited counterparties through a smart contract-managed algorithmic lending strategy.</p>
+<p>B) Tokenized collateral assets (invoices, property deeds, equipment titles) are represented as on-chain digital twins, with oracle networks providing real-time collateral valuation — giving credit investors continuous, verifiable visibility into collateral health without relying on quarterly borrower self-reporting.</p>
+<p>C) Private credit tokenization automatically upgrades all borrowers to investment-grade credit ratings, eliminating the need for ongoing collateral monitoring.</p>
+<p>D) On-chain transparency requires private borrowers to publicly disclose all financial information on the blockchain, violating commercial confidentiality requirements under all major jurisdictions.</p>
 <hr />
 <h3 id="answer-key-explanations"><strong>Answer Key &amp; Explanations</strong></h3>
 <p><strong>1. Answer: C</strong></p>
@@ -1485,6 +1515,16 @@
 <p><em>Explanation:</em> Wealth managers sit at the intersection of supply and demand. In situations where fund managers are less receptive to tokenizing their own funds, wealth managers can create and structure their own tokenized feeder funds. This builds their roster of on-chain funds, serves their individual clients, and demonstrates the benefits of tokenization to the fund managers over time.</p>
 <p><strong>5. Answer: B</strong></p>
 <p><em>Explanation:</em> The most common and regulatorily compliant approach is the Tokenized SPV (or indirect tokenization). The real estate asset is held by an entity, such as a private limited company, SPV, or trust. This entity is then tokenized, and tokens are issued to investors, giving them indirect interests in the underlying real-world asset while fitting within existing securities regulations. Direct tokenization of the asset is less common due to regulatory challenges, non-fungibility issues, and limited use cases.</p>
+<p><strong>6. Correct Answer: B</strong>
+<em>Explanation:</em> VC fund tokenization faces compound complexity: portfolio company valuations require subjective 409A appraisals rather than observable market prices; LP agreements often restrict transfers without GP consent and include complex rights (pro-rata in future rounds, information rights) that must transfer with the tokens; and the information asymmetry between insider GPs and secondary market buyers creates adverse selection risk. Platforms like Carta and Securitize are working on frameworks for tokenized VC secondary markets, but the structural complexity makes it more challenging than tokenizing assets with observable market prices and simpler governance.</p>
+<p><strong>7. Correct Answer: B</strong>
+<em>Explanation:</em> Infrastructure assets — characterized by long-duration, stable, often inflation-linked cash flows from regulated concession agreements — are inherently suited to pension fund ALM. Tokenization enhances this alignment: smart contracts automate periodic distributions (quarterly concession revenues, regulated utility cash flows) directly to investor wallets on a programmatic schedule, eliminating manual distribution administration. On-chain reporting provides real-time portfolio transparency vs. traditional quarterly paper statements. The programmable nature of tokenized infrastructure distributions allows pension funds to precisely match asset cash flows to liability payment schedules, improving ALM accuracy.</p>
+<p><strong>8. Correct Answer: B</strong>
+<em>Explanation:</em> GP consent rights are a standard provision in private equity LP agreements and cannot simply be eliminated by tokenization. The solution is a programmable transfer restriction: the ERC-1400 'controller' function or equivalent mechanism routes transfer requests to a GP-designated approval wallet. The GP reviews the proposed buyer's identity, accreditation, and strategic fit, then either approves (triggering the token transfer) or rejects (blocking it). Secondary marketplaces like ADDX and tZERO facilitate this by providing a compliant platform where buyers can express interest in acquiring LP tokens, with the GP approval step built into the transaction workflow. This preserves GP governance rights while enabling orderly secondary liquidity.</p>
+<p><strong>9. Correct Answer: B</strong>
+<em>Explanation:</em> Smart contract-automated rental distributions are one of tokenization's most compelling real estate use cases. The mechanism: the property's bank account receives monthly rents; an oracle monitors the balance; once confirmed, the smart contract reads all current token balances, calculates each holder's proportional entitlement (e.g., 500 tokens / 1,000,000 total tokens = 0.05% × monthly rent), and executes simultaneous transfers to all registered wallets. This eliminates the fund administrator's manual calculation and batch payment process, reduces errors, provides on-chain verifiability, and — for international investors — enables instant cross-border income receipt without correspondent banking delays.</p>
+<p><strong>10. Correct Answer: B</strong>
+<em>Explanation:</em> Information asymmetry — the lender knowing less about collateral health than the borrower — is the core risk in private credit. Tokenization addresses this by creating on-chain representations of collateral assets linked to real-world data via oracle networks. If loans are secured by commercial real estate, oracles can monitor property valuations; if secured by receivables, oracles can track invoice payment status. This continuous on-chain monitoring replaces the quarterly covenant certificate process where lenders rely on borrower-provided (and potentially manipulated) data. Centrifuge's implementation for supply chain finance demonstrates this: invoice NFTs are linked to verifiable business data, giving lenders real-time collateral visibility.</p>
 
 
 
@@ -1594,13 +1634,17 @@
     wrapper.appendChild(h2);
     elements.forEach(function(e) { wrapper.appendChild(e); });
 
-    // Parse answers
+    // Parse answers — handles all formats:
+    //   **1. Answer: B**  |  **1. Correct Answer: B**
+    //   **6. Correct Answer: B**  |  **Question 1: C** (Module 2 style)
     var answers = {};
     var answerH3 = wrapper.querySelector('h3[id*="answer-key"]');
     if (answerH3) {
       var scan = answerH3.nextElementSibling;
       while (scan) {
-        var m = scan.textContent.match(/^\s*(\d+)\.\s*Answer:\s*([A-D])/i);
+        var t = scan.textContent.trim();
+        var m = t.match(/^(?:Question\s+)?(\d+)[\.:\s]*(?:Correct\s+)?Answer[:\s]+([A-D])/i);
+        if (!m) m = t.match(/^Question\s+(\d+)\s*:\s*([A-D])\s*$/i);
         if (m) answers[m[1]] = m[2].toUpperCase();
         scan = scan.nextElementSibling;
       }
@@ -1628,37 +1672,58 @@
       });
     }
 
-    // Make options clickable
+    // Make options clickable — handles two question formats:
+    //   Format A: **1. Question text?**   (strong starts with digit+dot)
+    //   Format B: **Question N: Title**   (strong starts with "Question N:")
     var qNum = 0;
+
+    function attachOption(p, qNumber) {
+      var text = p.textContent.trim();
+      p.classList.add('quiz-option');
+      p.setAttribute('data-question', String(qNumber));
+      p.setAttribute('data-option', text[0].toUpperCase());
+      p.addEventListener('click', function() {
+        var q = this.getAttribute('data-question');
+        var chosen = this.getAttribute('data-option');
+        var correct = answers[q];
+        wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
+          o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
+        });
+        this.classList.add('quiz-selected');
+        if (chosen === correct) {
+          this.classList.add('quiz-correct');
+        } else {
+          this.classList.add('quiz-incorrect');
+          var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
+          if (cEl) cEl.classList.add('quiz-reveal');
+        }
+      });
+    }
+
     wrapper.querySelectorAll('p').forEach(function(p) {
       var text = p.textContent.trim();
       var strong = p.querySelector('strong');
+
+      // Format A: **1. Question text**
       if (strong && /^\d+\./.test(strong.textContent.trim())) {
         qNum++;
         p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
         return;
       }
-      if (/^[A-D]\)/.test(text) && qNum > 0) {
-        p.classList.add('quiz-option');
+
+      // Format B: **Question N: Title** (Q6-Q10 and modules 7-16 Q1-Q5)
+      var qMatch = strong && strong.textContent.trim().match(/^Question\s+(\d+)\s*:/i);
+      if (qMatch) {
+        qNum = parseInt(qMatch[1]);
+        p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
-        p.setAttribute('data-option', text[0].toUpperCase());
-        p.addEventListener('click', function() {
-          var q = this.getAttribute('data-question');
-          var chosen = this.getAttribute('data-option');
-          var correct = answers[q];
-          wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
-            o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
-          });
-          this.classList.add('quiz-selected');
-          if (chosen === correct) {
-            this.classList.add('quiz-correct');
-          } else {
-            this.classList.add('quiz-incorrect');
-            var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
-            if (cEl) cEl.classList.add('quiz-reveal');
-          }
-        });
+        return;
+      }
+
+      // Option line: A) / B) / C) / D)
+      if (/^[A-D]\)/.test(text) && qNum > 0) {
+        attachOption(p, qNum);
       }
     });
     console.log('[quiz] done, ' + qNum + ' questions');

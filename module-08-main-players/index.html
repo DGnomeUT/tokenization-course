@@ -1442,6 +1442,36 @@
 <p>B) BlackRock leverages an intermediary distribution model partnered with Securitize, whereas Franklin Templeton utilizes its own proprietary direct-to-client distribution channel.</p>
 <p>C) BlackRock issues its tokens exclusively on private-permissioned ledgers, while Franklin Templeton uses only public Ethereum.</p>
 <p>D) BlackRock requires physical gold collateral, whereas Franklin Templeton relies entirely on uncollateralized crypto assets.</p>
+<p><strong>Question 6: Centrifuge and Maple Finance: Private Market Tokenization</strong>
+Centrifuge and Maple Finance represent a specific category of tokenization platform focused on private credit and real-world asset lending. What specific market gap do these platforms address that traditional tokenization platforms (like Securitize) do not primarily target?</p>
+<p>A) They focus exclusively on tokenizing public equities for retail investors, a segment that Securitize has historically avoided due to regulatory complexity.</p>
+<p>B) They specialize in originating, structuring, and tokenizing private credit and real-world asset loans — providing SMEs and private borrowers with direct access to on-chain capital pools that traditional banks underserve, while giving institutional DeFi investors access to real-world yield.</p>
+<p>C) They operate as central bank-authorized payment settlement networks, providing CBDC clearing and settlement services for tokenized government securities.</p>
+<p>D) They function as regulatory bodies that issue compliance certifications to other tokenization platforms, enabling those platforms to bypass SEC registration requirements.</p>
+<p><strong>Question 7: Fireblocks vs Anchorage Digital: Enterprise Custody Architecture</strong>
+A digital asset custody evaluation team is comparing Fireblocks (MPC-based software custody) and Anchorage Digital (federally chartered digital asset bank). What is the critical differentiating factor that most influences the custody selection for an asset manager managing institutional client funds?</p>
+<p>A) Fireblocks provides higher transaction speeds while Anchorage Digital provides higher storage capacity for digital assets — making the choice primarily a throughput versus storage trade-off.</p>
+<p>B) Anchorage Digital's federal bank charter means it operates under OCC oversight with FDIC-equivalent regulatory standards — making it the mandatory choice for institutional asset managers subject to DOL or ERISA fiduciary obligations. Fireblocks offers superior programmable policy enforcement and integration flexibility for technology-forward institutions without those specific fiduciary regulatory constraints.</p>
+<p>C) Both platforms are functionally identical since all institutional digital asset custodians must use the same MPC key management architecture under SEC Rule 206(4)-2.</p>
+<p>D) Fireblocks is exclusively a cold storage solution while Anchorage Digital operates exclusively in hot wallet infrastructure, making them complementary rather than competitive.</p>
+<p><strong>Question 8: Pyth Network and Real-Time Pricing Infrastructure</strong>
+A tokenized private equity fund must calculate and publish daily NAV on-chain for transparent investor reporting. What infrastructure challenge does this create, and how do oracle networks like Pyth Network address it?</p>
+<p>A) Daily NAV calculation requires a centralized fund administrator to manually update an on-chain variable — oracle networks automate this by replacing the fund administrator entirely.</p>
+<p>B) Private equity funds have no assets that can be priced in real-time, making on-chain NAV publication technically impossible regardless of oracle infrastructure.</p>
+<p>C) Oracle networks like Pyth aggregate pricing data from authorized institutional data sources (prime brokers, exchanges, fund administrators) and publish signed, tamper-resistant price feeds on-chain — enabling smart contracts to automatically calculate and distribute NAV-based redemptions, management fees, and carried interest without relying on a centralized updater.</p>
+<p>D) Pyth Network provides lending and liquidity services for tokenized assets, not pricing data — addressing NAV calculation requires separate infrastructure from Chainlink or Band Protocol.</p>
+<p><strong>Question 9: Canton Network Members and Institutional Blockchain Ecosystem</strong>
+The Canton Network has recruited Goldman Sachs, BNY Mellon, Deutsche Bank, and other Tier-1 institutions as founding participants. What specific strategic benefit does institutional participation in a shared blockchain consortium provide that independent proprietary blockchain deployments cannot?</p>
+<p>A) Consortium participation grants regulatory exemptions from securities law requirements since multi-institution governance satisfies self-regulatory organization (SRO) standards.</p>
+<p>B) Shared network participation creates a pre-integrated counterparty ecosystem — when Goldman Sachs and BNY Mellon both operate on Canton, they can execute atomic settlement with each other without bilateral technical integration projects, creating immediate network effects and reducing the per-counterparty onboarding cost from months to near-zero.</p>
+<p>C) Consortium blockchains guarantee higher yields for all participants since the shared infrastructure reduces per-transaction costs below those of any single-institution deployment.</p>
+<p>D) Canton Network participation automatically provides interoperability with all public blockchain networks through Canton's built-in universal bridging protocol.</p>
+<p><strong>Question 10: SWIFT and Cross-Border Settlement Integration Strategy</strong>
+SWIFT — connecting 11,000+ financial institutions across 200+ countries — is actively developing tokenization integration capabilities. How does SWIFT's role in tokenized asset settlement differ from blockchain-native interoperability protocols like Chainlink CCIP?</p>
+<p>A) SWIFT provides identical functionality to CCIP but at lower cost, making CCIP obsolete for any institution already connected to the SWIFT network.</p>
+<p>B) SWIFT serves as the trusted messaging and settlement coordination layer for traditional financial institutions that lack blockchain nodes — enabling existing SWIFT-connected banks to participate in tokenized asset settlement by translating blockchain transaction messages into ISO 20022 format without requiring every counterparty to run a blockchain node. CCIP addresses the native blockchain-to-blockchain interoperability layer for institutions already operating on-chain.</p>
+<p>C) SWIFT and CCIP are direct competitors for the same functionality and cannot coexist in the same tokenized settlement ecosystem.</p>
+<p>D) SWIFT is being replaced entirely by blockchain-native settlement and will have no role in the tokenized asset ecosystem by 2030.</p>
 <hr />
 <h3 id="answer-key-explanations">Answer Key &amp; Explanations</h3>
 <p><strong>1. Answer: B (Securitize)</strong></p>
@@ -1454,6 +1484,16 @@
 <p><em>Explanation:</em> Middleware providers are the enforcers of "Shared Truth". Chainlink provides critical off-chain data services, including Proof of Reserve to verify asset backing and Market/Data Feeds to continuously update smart contracts with accurate Net Asset Values (NAVs). Without this oracle layer, on-chain assets cannot securely react to off-chain market dynamics. </p>
 <p><strong>5. Answer: B (BlackRock leverages an intermediary distribution model partnered with Securitize, whereas Franklin Templeton utilizes its own proprietary direct-to-client distribution channel.)</strong></p>
 <p><em>Explanation:</em> Strategic distribution models vary significantly among major players. BlackRock utilizes an <em>intermediary</em> model for its BUIDL fund by partnering with Securitize (which acts as the digital wealth management platform and transfer agent). Conversely, Franklin Templeton operates a <em>direct-to-client</em> model using its own proprietary Benji platform to distribute its FOBXX fund. Both are targeting institutional or accredited capital, not just retail, and operate on public or hybrid chains.</p>
+<p><strong>6. Correct Answer: B</strong>
+<em>Explanation:</em> Centrifuge and Maple Finance occupy the private credit tokenization niche — originating real-world loans (supply chain finance, real estate mortgages, SME credit), representing them as NFTs on-chain, and pooling them into structured tokens that institutional DeFi investors can purchase for real-world yield. This is fundamentally different from Securitize's model (secondary market infrastructure for institutional fund distribution). Centrifuge has processed over $500M in real-world asset financing; Maple Finance has facilitated billions in institutional crypto-native and real-world lending. They address the $1.7 trillion global trade finance gap and the underserved SME credit market.</p>
+<p><strong>7. Correct Answer: B</strong>
+<em>Explanation:</em> The custody selection decision often hinges on regulatory classification. Anchorage Digital — the first federally chartered digital asset bank (OCC charter) — provides a custody arrangement that meets the highest regulatory standard for fiduciary custodians, satisfying requirements for pension funds, ERISA-governed asset managers, and regulated investment advisers under the SEC's safeguarding rule. Fireblocks, as a software-based MPC custody provider, offers exceptional flexibility, policy automation (transaction approval workflows), and deep system integrations — favored by digital-native institutions and platforms that prioritize programmability over the specific regulatory classification of a chartered bank.</p>
+<p><strong>8. Correct Answer: C</strong>
+<em>Explanation:</em> Pyth Network is an institutional-grade oracle specializing in high-fidelity, low-latency financial data from first-party sources (trading firms, exchanges, custodians). For tokenized fund NAV: Pyth aggregates valuations from multiple authorized sources, applies statistical confidence intervals, and publishes the aggregate feed on-chain with cryptographic attestation. Smart contracts can then use this on-chain price feed to calculate accurate NAV, process redemptions at fair value, and trigger fee distributions — all without a centralized administrator manually updating the contract. This on-chain pricing transparency is increasingly expected by institutional investors as a condition of tokenized fund participation.</p>
+<p><strong>9. Correct Answer: B</strong>
+<em>Explanation:</em> The principal value of blockchain consortia is pre-integration. When two institutions both run Canton Network nodes, they can execute atomic DvP settlement with each other without building and maintaining a bilateral technical integration. In traditional markets, each bilateral integration (trading system A ↔ custodian B ↔ settlement system C) requires months of technical work and ongoing maintenance. On a shared network, any two participants can transact immediately using standardized smart contract interfaces. As more institutions join, the network effect compounds: each new participant increases the value for all existing participants exponentially.</p>
+<p><strong>10. Correct Answer: B</strong>
+<em>Explanation:</em> SWIFT and blockchain interoperability protocols like CCIP address different integration layers. SWIFT's tokenization initiatives (including its CBDC interoperability experiments) focus on connecting its 11,000+ existing member institutions to tokenized networks without requiring blockchain infrastructure adoption by every correspondent bank. SWIFT translates between traditional messaging formats and blockchain transaction instructions, acting as the trusted intermediary layer for legacy-connected participants. CCIP serves institutions already operating on-chain, enabling direct asset transfers between different blockchains. In practice, both will coexist: SWIFT handles the TradFi-to-blockchain bridge; CCIP handles native cross-chain transfers within the blockchain ecosystem.</p>
 
 
 
@@ -1563,13 +1603,17 @@
     wrapper.appendChild(h2);
     elements.forEach(function(e) { wrapper.appendChild(e); });
 
-    // Parse answers
+    // Parse answers — handles all formats:
+    //   **1. Answer: B**  |  **1. Correct Answer: B**
+    //   **6. Correct Answer: B**  |  **Question 1: C** (Module 2 style)
     var answers = {};
     var answerH3 = wrapper.querySelector('h3[id*="answer-key"]');
     if (answerH3) {
       var scan = answerH3.nextElementSibling;
       while (scan) {
-        var m = scan.textContent.match(/^\s*(\d+)\.\s*Answer:\s*([A-D])/i);
+        var t = scan.textContent.trim();
+        var m = t.match(/^(?:Question\s+)?(\d+)[\.:\s]*(?:Correct\s+)?Answer[:\s]+([A-D])/i);
+        if (!m) m = t.match(/^Question\s+(\d+)\s*:\s*([A-D])\s*$/i);
         if (m) answers[m[1]] = m[2].toUpperCase();
         scan = scan.nextElementSibling;
       }
@@ -1597,37 +1641,58 @@
       });
     }
 
-    // Make options clickable
+    // Make options clickable — handles two question formats:
+    //   Format A: **1. Question text?**   (strong starts with digit+dot)
+    //   Format B: **Question N: Title**   (strong starts with "Question N:")
     var qNum = 0;
+
+    function attachOption(p, qNumber) {
+      var text = p.textContent.trim();
+      p.classList.add('quiz-option');
+      p.setAttribute('data-question', String(qNumber));
+      p.setAttribute('data-option', text[0].toUpperCase());
+      p.addEventListener('click', function() {
+        var q = this.getAttribute('data-question');
+        var chosen = this.getAttribute('data-option');
+        var correct = answers[q];
+        wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
+          o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
+        });
+        this.classList.add('quiz-selected');
+        if (chosen === correct) {
+          this.classList.add('quiz-correct');
+        } else {
+          this.classList.add('quiz-incorrect');
+          var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
+          if (cEl) cEl.classList.add('quiz-reveal');
+        }
+      });
+    }
+
     wrapper.querySelectorAll('p').forEach(function(p) {
       var text = p.textContent.trim();
       var strong = p.querySelector('strong');
+
+      // Format A: **1. Question text**
       if (strong && /^\d+\./.test(strong.textContent.trim())) {
         qNum++;
         p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
         return;
       }
-      if (/^[A-D]\)/.test(text) && qNum > 0) {
-        p.classList.add('quiz-option');
+
+      // Format B: **Question N: Title** (Q6-Q10 and modules 7-16 Q1-Q5)
+      var qMatch = strong && strong.textContent.trim().match(/^Question\s+(\d+)\s*:/i);
+      if (qMatch) {
+        qNum = parseInt(qMatch[1]);
+        p.classList.add('quiz-question');
         p.setAttribute('data-question', String(qNum));
-        p.setAttribute('data-option', text[0].toUpperCase());
-        p.addEventListener('click', function() {
-          var q = this.getAttribute('data-question');
-          var chosen = this.getAttribute('data-option');
-          var correct = answers[q];
-          wrapper.querySelectorAll('.quiz-option[data-question="' + q + '"]').forEach(function(o) {
-            o.classList.remove('quiz-selected','quiz-correct','quiz-incorrect','quiz-reveal');
-          });
-          this.classList.add('quiz-selected');
-          if (chosen === correct) {
-            this.classList.add('quiz-correct');
-          } else {
-            this.classList.add('quiz-incorrect');
-            var cEl = wrapper.querySelector('.quiz-option[data-question="' + q + '"][data-option="' + correct + '"]');
-            if (cEl) cEl.classList.add('quiz-reveal');
-          }
-        });
+        return;
+      }
+
+      // Option line: A) / B) / C) / D)
+      if (/^[A-D]\)/.test(text) && qNum > 0) {
+        attachOption(p, qNum);
       }
     });
     console.log('[quiz] done, ' + qNum + ' questions');
